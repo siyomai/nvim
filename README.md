@@ -11,7 +11,8 @@ This is my nvim setup
 3. Clone the repo to `~/.config/nvim` and open `~/.config/nvim/plugins/plugins-setup.lua` with neovim
    ```bash
    $ git clone git@github.com:siyomai/nvim.git ~/.config/
-   $ cd ~/.config/nvim/plugins/
+   $ cd ~/.config/nvim/lua/siyomai/
    $ nvim plugin-setup.lua
    ```
-4. After installation Quit neovim and it's ready to go.
+4. Save file with `:w`. This will trigger the installation for the plugins.
+   `Note: if installation fails, just try again. It will succeed the second time`

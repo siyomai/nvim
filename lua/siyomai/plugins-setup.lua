@@ -80,6 +80,9 @@ return packer.startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
+  -- prettier
+  use 'MunifTanjim/prettier.nvim'
+
   -- git signs
   use 'lewis6991/gitsigns.nvim'
 
@@ -90,6 +93,9 @@ return packer.startup(function(use)
       require('org-bullets').setup()
     end
   }
+
+  -- LLM
+  use 'David-Kunz/gen.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -32,6 +32,12 @@ keymap.set('n', '<leader><leader>', '<C-^>')
 keymap.set('n', '<leader>l', ':Gen<cr>')
 keymap.set('v', '<leader>l', ':Gen<cr>')
 
+-- Session Management
+keymap.set('n', '<leader>ss', require("auto-session.session-lens").search_session, {
+  noremap = true,
+})
+keymap.set('n', '<leader>ls', ':SessionSave<cr>')
+
 -- search stuff
 keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
@@ -52,8 +58,6 @@ keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc =
 keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]resume' })
 
 -- startify
-keymap.set('n', '<leader>ls', ':SSave<cr>')
-keymap.set('n', '<leader>ll', ':SClose<cr>')
 
 -- fugitive
 keymap.set('n', '<leader>gs', function() vim.cmd.Git() end)

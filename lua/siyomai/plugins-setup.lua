@@ -62,8 +62,8 @@ return packer.startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
 
-  -- vim greeter
-  use 'mhinz/vim-startify'
+  -- vim session manager
+  use 'rmagatti/auto-session'
 
   -- formatter
   use 'mhartington/formatter.nvim'

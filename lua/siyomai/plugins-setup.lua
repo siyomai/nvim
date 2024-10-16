@@ -68,6 +68,14 @@ return packer.startup(function(use)
   -- formatter
   use 'mhartington/formatter.nvim'
 
+  -- markdown preview
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   -- syntax highlighting
   use({
     'nvim-treesitter/nvim-treesitter',

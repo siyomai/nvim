@@ -76,6 +76,33 @@ return packer.startup(function(use)
     end,
   })
 
+   -- Avante.nvim with build process
+  use 'stevearc/dressing.nvim'
+  use 'MunifTanjim/nui.nvim'
+  use 'MeanderingProgrammer/render-markdown.nvim'
+  use {
+    'yetone/avante.nvim',
+    branch = 'main',
+    run = 'make',
+    config = function()
+      require('avante').setup()
+    end
+  }
+
+  -- codeium
+  use 'onsails/lspkind.nvim'
+  use {
+    "Exafunction/codeium.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  }
+
   -- auto closing
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'

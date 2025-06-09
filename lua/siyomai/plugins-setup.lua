@@ -29,10 +29,20 @@ return packer.startup(function(use)
   use 'szw/vim-maximizer'
   use 'tpope/vim-surround'
   use 'numToStr/comment.nvim'
-  use 'nvim-tree/nvim-tree.lua'
+  -- use 'nvim-tree/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'folke/which-key.nvim'
+  use({
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  })
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
@@ -59,8 +69,14 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
 
   -- git integration
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
+  -- use 'tpope/vim-fugitive'
+  -- use 'tpope/vim-rhubarb'
+  use({
+    "kdheepak/lazygit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
   -- vim session manager
   use 'rmagatti/auto-session'

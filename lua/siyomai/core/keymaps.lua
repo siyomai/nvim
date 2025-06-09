@@ -2,13 +2,11 @@ vim.g.mapleader = ','
 
 local keymap = vim.keymap
 
--- vim.keymap.set('n', '<C-n>', function() vim.cmd.Neotree('toggle') end)
 
 keymap.set('n', '<C-h>', '<C-w><left>')
 keymap.set('n', '<C-j>', '<C-w><down>')
 keymap.set('n', '<C-k>', '<C-w><up>')
 keymap.set('n', '<C-l>', '<C-w><right>')
-keymap.set('n', '<leader>nh', ':nohl<CR>')
 
 -- split stuff
 keymap.set('n', '<leader>sv', '<C-w>v')
@@ -16,27 +14,25 @@ keymap.set('n', '<leader>sp', '<C-w>s')
 keymap.set('n', '<leader>se', '<C-w>=')
 
 -- tabs stuff
-keymap.set('n', '<leader>to', ':tabnew<CR>')
-keymap.set('n', '<leader>tx', ':tabclose<CR>')
-keymap.set('n', '<leader>tn', ':tabn<CR>')
-keymap.set('n', '<leader>tp', ':tabp<CR>')
+keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Tab: New' })
+keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Tab: Close' })
+keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = 'Tab: Next' })
+keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Tab: Previous' })
 
 -- maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
 
--- nvim tree
-keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+-- neo tree
+keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
 keymap.set('n', '<leader><leader>', '<C-^>')
 
 -- LLM
-keymap.set('n', '<leader>l', ':Gen<cr>')
-keymap.set('v', '<leader>l', ':Gen<cr>')
+keymap.set('n', '<leader>m', ':Gen<cr>')
+keymap.set('v', '<leader>m', ':Gen<cr>')
 
 -- Session Management
-keymap.set('n', '<leader>ss', require("auto-session.session-lens").search_session, {
-  noremap = true,
-})
-keymap.set('n', '<leader>ls', ':SessionSave<cr>')
+keymap.set('n', '<leader>ll', '<cmd>SessionSearch<cr>', { desc = 'Session Search' })
+keymap.set('n', '<leader>ls', '<cmd>SessionSave<cr>', { desc = 'Session Save' })
 
 -- search stuff
 keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -59,12 +55,6 @@ keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]
 
 -- startify
 
--- fugitive
-keymap.set('n', '<leader>gs', function() vim.cmd.Git() end)
-keymap.set('n', '<leader>gp', function() vim.cmd.Git('-c push.default=current push') end)
-keymap.set('n', '<leader>gcb', ':Git checkout -b ')
-keymap.set('n', '<leader>gco', function() vim.cmd.Git('checkout') end)
-keymap.set('n', '<leader>gpd', function() vim.cmd.Git('pull origin develop --rebase') end)
-keymap.set('n', '<leader>gpmn', function() vim.cmd.Git('pull origin main --rebase') end)
-keymap.set('n', '<leader>gpms', function() vim.cmd.Git('pull origin master --rebase') end)
+-- lazygit
+keymap.set('n', '<leader>gs', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 

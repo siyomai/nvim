@@ -44,6 +44,15 @@ return packer.startup(function(use)
     }
   })
 
+  -- github/copilot
+  use 'git@github.com:github/copilot.vim'
+
+  -- copilot chat
+  use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    requires = { 'nvim-lua/plenary.nvim', 'git@github.com:github/copilot.vim' },
+  }
+
   -- lualine
   use 'nvim-lualine/lualine.nvim'
 
@@ -112,6 +121,12 @@ return packer.startup(function(use)
 
   -- LLM
   use 'David-Kunz/gen.nvim'
+  use({
+    "yetone/avante.nvim",
+    config = function()
+      require("avante").setup({})
+    end
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

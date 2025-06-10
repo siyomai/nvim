@@ -22,10 +22,14 @@ keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Tab: Previous' })
 -- maximizer
 keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>')
 
--- neo tree
-keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
-keymap.set('n', '<leader><leader>', '<C-^>')
-
+-- copilot
+keymap.set("n", "<leader>ac", ":CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+keymap.set("n", "<leader>am", ":CopilotChatModels<CR>", { desc = "Copilot Chat Models" })
+keymap.set("n", "<leader>ar", ":CopilotChatReset<CR>", { desc = "Copilot Chat Reset" })
+keymap.set("n", "<leader>ah", ":CopilotChatHelp<CR>", { desc = "Copilot Chat Help" })
+keymap.set("n", "<leader>ae", ":CopilotChatExplain<CR>", { desc = "Copilot Chat Explain" })
+keymap.set("n", "<leader>af", ":CopilotChatFix<CR>", { desc = "Copilot Chat Fix" })
+keymap.set("n", "<leader>at", ":CopilotChatTests<CR>", { desc = "Copilot Chat Generate Tests" })
 -- LLM
 keymap.set('n', '<leader>m', ':Gen<cr>')
 keymap.set('v', '<leader>m', ':Gen<cr>')

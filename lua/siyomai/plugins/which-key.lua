@@ -9,4 +9,5 @@ wk.add({
   { "<leader>s", group = "+Search" },              -- group
   { "<leader>t", group = "+Tabs" },                -- group
   { "<leader>w", group = "+Workspaces" },          -- group
+  { "<leader>a", group = "+AI" },          -- group
 }, { mode = "n", ignore_missing = true })

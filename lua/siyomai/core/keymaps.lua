@@ -59,6 +59,9 @@ keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]
 
 -- startify
 
+-- neotree
+keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { desc = 'Toggle NeoTree' })
+
 -- lazygit
 keymap.set('n', '<leader>gs', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 
